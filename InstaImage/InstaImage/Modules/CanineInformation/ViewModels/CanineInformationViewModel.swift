@@ -8,28 +8,41 @@
 
 import Foundation
 
+protocol CanineInformationViewModelDelegate: AnyObject {
+    func updateView()
+    func showErrorView(error: Error)
+}
+
 class CanineInformationViewModel {
     
     let service = CanineInformationService()
+    weak var delegate: CanineInformationViewModelDelegate?
+    
+    var title: String {
+        "Canine Information"
+    }
+    
+    var canineInfo: [Canine]?
     
     func fetchDetails() {
-        service.getDetails(model: Canine.self) { result in
-
+        service.getDetails(model: Details.self) { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case let .success(info):
-                
-                break
-            case .failure(_):
-                break
+                self.canineInfo = info.filter {
+                    !($0.breeds?.isEmpty ?? true)
+                }
+                self.delegate?.updateView()
+            case .failure(let error):
+                self.delegate?.showErrorView(error: error)
             }
-            
         }
     }
     
-}
-
-struct CanineInformationCellViewModel {
-    let name: String?
-    let lifeSpan: String?
-    let imageString: String?
+    func fetchCanineInformationCellViewModel(for index: Int) -> CanineInformationCellViewModel {
+        CanineInformationCellViewModel(name: canineInfo?[index].breeds?.first?.name,
+                                       lifeSpan: canineInfo?[index].breeds?.first?.lifeSpan,
+                                       imageString: URL(string: canineInfo?[index].urlString ?? ""))
+    }
+    
 }

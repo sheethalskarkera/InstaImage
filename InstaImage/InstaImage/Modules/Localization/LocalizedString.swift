@@ -9,10 +9,6 @@
 import UIKit
 
 enum LocalizedString: CustomStringConvertible {
-    /// UI
-    case comingSoonAlertTitle
-    case featureAvailiabilityAlertMessage
-    
     /// Network Service errors
     case genericError
     case incorrectRequest
@@ -22,12 +18,6 @@ enum LocalizedString: CustomStringConvertible {
     
     var description: String {
         switch self {
-        /// UI
-        case .comingSoonAlertTitle:
-            return localizeString("comingSoonAlertTitle", comment: "Coming soon alert title")
-        case .featureAvailiabilityAlertMessage:
-            return localizeString("featureAvailiabilityAlertMessage", comment: "Feature availiability alert message.")
-            
         /// Network Service errors
         case .genericError:
             return localizeString("genericErrorMessage", comment: "Network service default error message")

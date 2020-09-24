@@ -8,26 +8,25 @@
 
 import Foundation
 
-typealias Canine = [List]
+typealias Details = [Canine]
 
-struct List: Codable {
+struct Canine: Codable {
     let breeds: [Breeds]?
-    let urlString: String?
-  //  let width: Double
-   // let height: Double
+    let urlString: String
+    let width: Double
+    let height: Double
     
     private enum CodingKeys: String, CodingKey {
         case breeds
         case urlString = "url"
-     //   case width
-      //  case height
+        case width
+        case height
     }
 }
 
 struct Breeds: Codable {
-    
     let name: String
-    let lifeSpan: String?
+    let lifeSpan: String
     
     private enum CodingKeys: String, CodingKey {
         case name

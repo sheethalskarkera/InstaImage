@@ -30,18 +30,20 @@ final class Network {
                     completion(.failure(error))
                 }
             } else {
-                if let data = data {
-                    do {
-                        let stringValue =  #"\#(String(decoding: data, as: UTF8.self))"#
-                        if let resultData = try JSONSerialization.jsonObject(with: Data(stringValue.utf8), options: []) as? JSON {
-                            DispatchQueue.main.async {
-                                completion(.success(resultData))
-                            }
-                        }
-                    } catch {
+                guard let data = data else {
+                    let genericError = ServiceError.general(messsage: LocalizedString.genericError.description)
+                    completion(.failure(genericError))
+                    return
+                }
+                do {
+                    if let resultData = try JSONSerialization.jsonObject(with: Data(#"\#(String(decoding: data, as: UTF8.self))"#.utf8), options: []) as? JSON {
                         DispatchQueue.main.async {
-                            completion(.failure(error))
+                            completion(.success(resultData))
                         }
+                    }
+                } catch {
+                    DispatchQueue.main.async {
+                        completion(.failure(error))
                     }
                 }
             }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qIX-1E-Fwq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jiw-Wm-kWq">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Canine View Controller-->
         <scene sceneID="QOc-8I-PO5">
             <objects>
-                <tableViewController id="qIX-1E-Fwq" customClass="ViewController" customModule="InstaImage" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="qIX-1E-Fwq" customClass="CanineViewController" customModule="InstaImage" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Hur-E9-TyN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,6 +49,7 @@
                                         <constraint firstAttribute="trailing" secondItem="HbQ-53-dXI" secondAttribute="trailing" id="gAT-gf-qbO"/>
                                         <constraint firstItem="CcM-xp-fd9" firstAttribute="leading" secondItem="eYO-8r-Z7o" secondAttribute="leading" constant="20" id="kwM-p5-9Di"/>
                                         <constraint firstItem="VO0-VV-Cm4" firstAttribute="top" secondItem="HbQ-53-dXI" secondAttribute="bottom" constant="33" id="mge-6h-RKQ"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="CcM-xp-fd9" secondAttribute="bottom" constant="10" id="n9k-fa-ytz"/>
                                         <constraint firstItem="HbQ-53-dXI" firstAttribute="leading" secondItem="CcM-xp-fd9" secondAttribute="trailing" constant="10" id="p5V-5j-AQ8"/>
                                         <constraint firstItem="HbQ-53-dXI" firstAttribute="top" secondItem="eYO-8r-Z7o" secondAttribute="top" constant="34" id="qMa-j0-3jc"/>
                                         <constraint firstItem="VO0-VV-Cm4" firstAttribute="leading" secondItem="CcM-xp-fd9" secondAttribute="trailing" constant="10" id="zTq-07-mXj"/>
@@ -67,10 +68,49 @@
                             <outlet property="delegate" destination="qIX-1E-Fwq" id="t2b-Wl-kUm"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="NEG-kd-Rz8">
+                        <rightBarButtonItems>
+                            <barButtonItem image="chevron.up" catalog="system" style="plain" id="dW6-0u-ZPG">
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <connections>
+                                    <action selector="tappedOnAscendingButton:" destination="qIX-1E-Fwq" id="PrM-qi-E72"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="chevron.down" catalog="system" style="plain" id="mOU-Mx-2Et">
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <connections>
+                                    <action selector="tappedOnDescendingButton:" destination="qIX-1E-Fwq" id="V0v-eh-O3k"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jDb-88-mBE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="997.10144927536237" y="41.517857142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="c8G-HY-Fzu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jiw-Wm-kWq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fjH-1G-UR4">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qIX-1E-Fwq" kind="relationship" relationship="rootViewController" id="IFd-Ie-lrv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bIj-QV-IS9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="86.956521739130437" y="41.517857142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chevron.down" catalog="system" width="64" height="36"/>
+        <image name="chevron.up" catalog="system" width="64" height="36"/>
+    </resources>
 </document>

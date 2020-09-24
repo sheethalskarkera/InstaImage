@@ -17,6 +17,9 @@ class CanineDetailTableViewCell: UITableViewCell {
     func bind(_ cellModel: CanineInformationCellViewModel) {
         nameLabel.text = cellModel.name
         lifeSpanLabel.text = cellModel.lifeSpan
+        if let url = cellModel.imageString {
+            imageView?.load(url: url)
+        }
     }
 
 }

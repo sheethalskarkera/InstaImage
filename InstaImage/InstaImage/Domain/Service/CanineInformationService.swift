@@ -36,7 +36,6 @@ class CanineInformationService {
                 do {
                     /// Decode JSON object into models
                     let responseModel = try JSONDecoder().decode(T.self, jsonObject: jsonData)
-                    print(responseModel)
                     completion(.success(responseModel))
                 } catch  {
                     /// Decoding failed,  return error

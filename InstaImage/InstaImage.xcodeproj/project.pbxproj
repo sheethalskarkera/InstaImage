@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		8700B105251C23040042E4C1 /* CanineDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8700B104251C23040042E4C1 /* CanineDetailTableViewCell.swift */; };
+		8700B107251C6B340042E4C1 /* CanineInformationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8700B106251C6B340042E4C1 /* CanineInformationCellViewModel.swift */; };
+		8700B109251C6CDA0042E4C1 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8700B108251C6CDA0042E4C1 /* UIImageView+Extension.swift */; };
 		87E543372518C9D60040B560 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E543362518C9D60040B560 /* AppDelegate.swift */; };
-		87E543392518C9D60040B560 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E543382518C9D60040B560 /* ViewController.swift */; };
-		87E5433C2518C9D60040B560 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87E5433A2518C9D60040B560 /* Main.storyboard */; };
+		87E543392518C9D60040B560 /* CanineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E543382518C9D60040B560 /* CanineViewController.swift */; };
+		87E5433C2518C9D60040B560 /* Canine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87E5433A2518C9D60040B560 /* Canine.storyboard */; };
 		87E5433E2518C9D70040B560 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87E5433D2518C9D70040B560 /* Assets.xcassets */; };
 		87E543412518C9D70040B560 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87E5433F2518C9D70040B560 /* LaunchScreen.storyboard */; };
 		87E5434C2518C9D70040B560 /* InstaImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E5434B2518C9D70040B560 /* InstaImageTests.swift */; };
@@ -48,10 +50,12 @@
 
 /* Begin PBXFileReference section */
 		8700B104251C23040042E4C1 /* CanineDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanineDetailTableViewCell.swift; sourceTree = "<group>"; };
+		8700B106251C6B340042E4C1 /* CanineInformationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanineInformationCellViewModel.swift; sourceTree = "<group>"; };
+		8700B108251C6CDA0042E4C1 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		87E543332518C9D60040B560 /* InstaImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87E543362518C9D60040B560 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		87E543382518C9D60040B560 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		87E5433B2518C9D60040B560 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		87E543382518C9D60040B560 /* CanineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanineViewController.swift; sourceTree = "<group>"; };
+		87E5433B2518C9D60040B560 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Canine.storyboard; sourceTree = "<group>"; };
 		87E5433D2518C9D70040B560 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87E543402518C9D70040B560 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87E543422518C9D70040B560 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -181,7 +185,7 @@
 		87E543682518CC630040B560 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				87E5433A2518C9D60040B560 /* Main.storyboard */,
+				87E5433A2518C9D60040B560 /* Canine.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -210,7 +214,7 @@
 		87E543712518CDB40040B560 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				87E543382518C9D60040B560 /* ViewController.swift */,
+				87E543382518C9D60040B560 /* CanineViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -219,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				87F64CC12518E48000CD4D8D /* JSONDecoder+Extension.swift */,
+				8700B108251C6CDA0042E4C1 /* UIImageView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				87F64CD52518F08500CD4D8D /* CanineInformationViewModel.swift */,
+				8700B106251C6B340042E4C1 /* CanineInformationCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -383,7 +389,7 @@
 				87E543412518C9D70040B560 /* LaunchScreen.storyboard in Resources */,
 				87F64CCE2518E9B700CD4D8D /* Localizable.strings in Resources */,
 				87E5433E2518C9D70040B560 /* Assets.xcassets in Resources */,
-				87E5433C2518C9D60040B560 /* Main.storyboard in Resources */,
+				87E5433C2518C9D60040B560 /* Canine.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,8 +421,10 @@
 				87F64CC02518E3D000CD4D8D /* ServiceRequestBuilder.swift in Sources */,
 				87F64CD62518F08500CD4D8D /* CanineInformationViewModel.swift in Sources */,
 				87F64CBA2518DF2000CD4D8D /* Result.swift in Sources */,
-				87E543392518C9D60040B560 /* ViewController.swift in Sources */,
+				87E543392518C9D60040B560 /* CanineViewController.swift in Sources */,
 				8700B105251C23040042E4C1 /* CanineDetailTableViewCell.swift in Sources */,
+				8700B107251C6B340042E4C1 /* CanineInformationCellViewModel.swift in Sources */,
+				8700B109251C6CDA0042E4C1 /* UIImageView+Extension.swift in Sources */,
 				87F64CCA2518E62400CD4D8D /* CanineInformationService.swift in Sources */,
 				87F64CBB2518DF2000CD4D8D /* Network.swift in Sources */,
 				87F64CC22518E48000CD4D8D /* JSONDecoder+Extension.swift in Sources */,
@@ -457,12 +465,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		87E5433A2518C9D60040B560 /* Main.storyboard */ = {
+		87E5433A2518C9D60040B560 /* Canine.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				87E5433B2518C9D60040B560 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Canine.storyboard;
 			sourceTree = "<group>";
 		};
 		87E5433F2518C9D70040B560 /* LaunchScreen.storyboard */ = {
