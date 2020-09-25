@@ -18,16 +18,9 @@ class CanineDetailTableViewCell: UITableViewCell {
         nameLabel.text = cellModel.name
         lifeSpanLabel.text = cellModel.lifeSpan
         if let url = cellModel.imageURL {
-//            load(url: url) { (image) in
-//                DispatchQueue.main.async {
-//                self.imageView?.image = image
-//                self.setNeedsLayout()
-//                }
-//            }
             imageView?.load(url: url) {
                 self.setNeedsLayout()
             }
-            
         }
     }
 

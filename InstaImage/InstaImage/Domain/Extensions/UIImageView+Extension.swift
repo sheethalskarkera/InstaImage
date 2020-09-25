@@ -16,18 +16,6 @@ extension UIImageView {
             self.image = cachedImage
             completion()
         } else {
-//            DispatchQueue.global().async { [weak self] in
-//                guard let self = self else { return }
-//                if let data = try? Data(contentsOf: url) {
-//                    if let image = UIImage(data: data) {
-//                        DispatchQueue.main.async {
-//                            imageCache.setObject(image.scale(), forKey: url.absoluteString as NSString)
-//                            self.image = self.image?.scale()
-//                        }
-//                    }
-//                }
-//            }
-//            
             let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, _ in
                 guard let self = self else { return }
                 if let data = data,
