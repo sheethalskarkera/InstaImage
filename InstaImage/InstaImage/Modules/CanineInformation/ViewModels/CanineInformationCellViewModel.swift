@@ -11,5 +11,5 @@ import Foundation
 struct CanineInformationCellViewModel {
     let name: String?
     let lifeSpan: String?
-    let imageString: URL?
+    let imageURL: URL?
 }

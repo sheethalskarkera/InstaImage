@@ -18,24 +18,37 @@ class CanineViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        viewModel.fetchDetails()
         title = viewModel.title
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.fetchDetails()
+    }
+    
+    // MARK:- UITableViewController
+   
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.canineInfo?.count ?? 1
+        viewModel.numberOfRows
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CanineDetailTableViewCell else { return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CanineCell", for: indexPath) as? CanineDetailTableViewCell else { return UITableViewCell()}
         cell.bind(viewModel.fetchCanineInformationCellViewModel(for: indexPath.row))
+        //cell.setNeedsLayout()
         return cell
     }
     
     @IBAction func tappedOnAscendingButton(_ sender: UIBarButtonItem) {
+        viewModel.sortCanines(.ascending)
     }
     
     @IBAction func tappedOnDescendingButton(_ sender: UIBarButtonItem) {
+        viewModel.sortCanines(.descending)
     }
     
     func presentAlertView(error: Error) {
