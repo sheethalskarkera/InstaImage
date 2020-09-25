@@ -22,7 +22,7 @@ extension UIImageView {
                     let image = UIImage(data: data) {
                     DispatchQueue.main.async {
                         imageCache.setObject(image.scale(), forKey: url.absoluteString as NSString)
-                        self.image = self.image?.scale()
+                        self.image = image.scale()
                         completion()
                     }
                 } else {
